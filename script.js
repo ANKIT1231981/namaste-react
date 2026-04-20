@@ -5,7 +5,7 @@ const parentDiv = React.createElement("div", { id: "parent" },
         React.createElement("h1", {}, "Hey, I am Ankit"),
         React.createElement("h2", {}, "Hey, I am Rohan")
       ]),
-
+      
     React.createElement("div", { id: "child2" },
       [
         React.createElement("h1", {}, "Hey, I am Ankit"),
@@ -17,40 +17,6 @@ const parentDiv = React.createElement("div", { id: "parent" },
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(parentDiv);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
