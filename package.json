@@ -1,24 +1,33 @@
 {
   "name": "nameste-react-ankit",
   "version": "1.0.0",
-  "description": "this is Namaste React by Ankit Saini",
+  "description": "",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/ANKIT1231981/namaste-react)"
+    "url": "git+https://github.com/ANKIT1231981/namaste-react.git"
   },
   "keywords": [],
-  "author": "Ankit Saini",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.16.4"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ANKIT1231981/namaste-react/issues"
   },
+  "homepage": "https://github.com/ANKIT1231981/namaste-react#readme",
   "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "@tailwindcss/postcss": "^4.3.0",
+    "parcel": "^2.16.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19"
   }
 }

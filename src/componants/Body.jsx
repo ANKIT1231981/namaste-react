@@ -1,7 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 // import listOfRes from "../utils/rowData";
 import { useEffect, useState } from "react";
-import ShimmerCards from "./ShimmerCards";
+import ShimmerCards from "./ShimmerCard";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState("");
@@ -12,10 +13,10 @@ const Body = () => {
   }, []);
 
   const fetchedData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
 
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -35,7 +36,6 @@ const Body = () => {
           }}
         > Search </button>
 
-
       </div>
       <div className="btn">
         <button
@@ -51,11 +51,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestaurants?.map((res, index) => (
-          <RestaurantCard key={index} resData={res} />
+          <Link style={{ textDecoration: "none" }} key={res?.info?.id} to={"/restaurants/"+ res?.info?.id}><RestaurantCard resData={res} /></Link>
         ))
         }
-
-
       </div>
     </div >
   );

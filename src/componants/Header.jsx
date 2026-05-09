@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import useOnlineViewer from "../utils/useOnlineViewer";
+import Grocery from "./Grocery";
 
 const Header = () => {
   const [btnValue, setBtnValue] = useState("Login");
+  const onlineViewer = useOnlineViewer();
+  
   return (
     <div className="header">
       <div className="logo-container">
@@ -12,11 +17,13 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul className="lists">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-          <button className="login-btn" onClick={() => {setBtnValue(btnValue === "Login" ? "Logout" : "Login")}}>{btnValue}</button>
+          <li>Online Status: {onlineViewer ? "✅" : "❌"}</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
+          <li><Link to="/grocery">Grocery</Link></li>
+          <button className="login-btn" onClick={() => { setBtnValue(btnValue === "Login" ? "Logout" : "Login") }}>{btnValue}</button>
         </ul>
       </div>
     </div>

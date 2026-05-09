@@ -3,10 +3,10 @@ import star from "../utils/star.png";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { name, costForTwo, avgRating, cuisines, cloudinaryImageId, } =
+  const { name, costForTwo, avgRating, cuisines, cloudinaryImageId, sla } =
     resData?.info;
   // console.log(star);
-  const {deliveryTime} = resData?.info?.sla;
+  // const {deliveryTime} = resData?.info?.sla;
   return (
     <div className="res-card">
       <img
@@ -23,7 +23,7 @@ const RestaurantCard = (props) => {
       <h6>{costForTwo}</h6>
       <div className="rating">
         <h6>{avgRating} stars</h6>
-        <h6>{deliveryTime} Min</h6>
+        <h6>{sla?.deliveryTime} Min</h6>
       </div>
       {/* <img src={star} alt="star" /> */}
       </div>
